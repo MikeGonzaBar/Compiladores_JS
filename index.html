@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="">
+  <title>Práctica 1</title>
+  <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div id="searchBar">
+      <input id="searchbar" onkeyup="search_News()" type="text" name="search" placeholder="Search animals..">        
+      <button id="searchButton" type="submit">Search</button>
+    </div>
+    
+    <div id="news-container" class="grid">
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="assets/scripts/main.js" type="module"></script>
+  <script id="newsFormat" type="text/x-handlebars-template">
+    {{#each news}}
+    <div class="news-item col-2">
+        <img class="photo" src="{{urlToImage}}" />
+        <h2>{{title}}</h2>
+        <p>{{description}}</p>
+        <a href="{{url}}" target="_blank">Ver más</a>
+    </div>
+    {{/each}}
+  </script>
+</body>
+</html>
